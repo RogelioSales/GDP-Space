@@ -12,6 +12,12 @@ public class PickUp : MonoBehaviour
     private float range;
     [SerializeField]
     private GameObject item;
+    [HideInInspector]
+    public bool IsCarrying
+    {
+        get { return isCarrying; }
+        set { isCarrying = value; }
+    }
     private bool isCarrying;
     // Use this for initialization
     void Start ()
@@ -26,7 +32,7 @@ public class PickUp : MonoBehaviour
         {
            if (isCarrying == false && this.gameObject.tag == "Pickable")
             {
-                Debug.Log("Player Entered");
+
                 if (Input.GetButtonDown("PickUp"))
                 {
                     Pickup();

@@ -47,20 +47,22 @@ public class RiddleDoors : MonoBehaviour
     {
         riddleDoor.SetActive(true);
         if (player.tag == "player" && Input.GetKeyDown(KeyCode.E))
-        {           
+        {
             riddlePanel.SetActive(true);
             cameraTurn.enabled = false;
             Time.timeScale = 0;
 
         }
-        else if(ready == true)
-            {
-                objectDetectedTime = Time.time;
-                Open();
-                riddleDoor.SetActive(false);
-            }
-         else
+        else if (ready == true)
+        {
+            objectDetectedTime = Time.time;
+            Open();
+            riddleDoor.SetActive(false);
+        }
+        else
+        {
             return;
+        }
     }
     void OnTriggerStay()
     {
@@ -80,6 +82,10 @@ public class RiddleDoors : MonoBehaviour
         else
             return;
         
+    }
+     void OnTriggerExit()
+    {
+        riddleDoor.SetActive(false);
     }
     public void InputText()
     {

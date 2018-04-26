@@ -49,7 +49,7 @@ public class OpenDoor : MonoBehaviour {
 	}
 	
 	void Update() {
-        Debug.Log(ready);
+      
 		switch (currentStatus) { 
 			case DoorStatus.closing :
 			case DoorStatus.opening: Moving(); break;
