@@ -49,11 +49,13 @@ public class OpenDoor : MonoBehaviour {
 	}
 	
 	void Update() {
+        Debug.Log(ready);
 		switch (currentStatus) { 
 			case DoorStatus.closing :
 			case DoorStatus.opening: Moving(); break;
 			case DoorStatus.opened: CheckAutoClose(); break;
 		}
+        
 	}
 	
 	private void CheckAutoClose() {
